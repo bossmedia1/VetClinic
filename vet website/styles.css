@@ -1,0 +1,462 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfdfd;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/*Navbar*/
+.navbar {
+    background-color: #2a9d8f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo{
+    font-size: 1.8cm;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* for 3 images */
+    height: 100%;
+    animation: slideAnimation 15s infinite;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+
+/* Hero Text Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #e76f51;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d45a3b;
+}
+
+/* About Section */
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2a9d8f;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+/* Services Section */
+.services{
+    background-color: #f4f4f4;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2a9d8f;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-box h3 {
+    margin-bottom: 0.5rem;
+    color: #264653;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+}
+
+footer p + p {
+    margin-top: 0.5rem;
+}
+
+/* Hero Animation */
+@keyframes sliseAnimation {
+    0% {transform: translateX(0vw);}
+    33% {transform: translateX(-100vw);}
+    66% {transform: translateX(-200vw);}
+    100% {transform: translateX(0vw);}
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+}
+
+.nav-links {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+}
+
+/* Booking Section */
+.booking {
+    padding-top: 3rem;
+}
+
+.booking h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #6a817e;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus
+.form-group select:focus,
+.form-group textarea:focus {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: #e76f51;
+}
+
+/* Doctors Section */
+.doctors-container h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2a9d8f;
+}
+
+.doctors-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #2a9d8f;
+}
+
+.doctors {
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.doctor-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.doctor-card h3 {
+    color: #2a9d8f;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.doctor-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.news-feed{
+    background-color: #74bd9a;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.news-feed strong {
+    margin-right: 1rem;
+}
+
+/* Tip Detail Page Styling */
+.tip-detail {
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .tip-detail h2 {
+    color: #2a9d8f;
+    margin-top: 2rem;
+  }
+  
+  .tip-detail h3 {
+    color: #264653;
+    margin-top: 1.5rem;
+  }
+  
+  .tip-detail p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .tip-img-wrapper {
+    text-align: center;
+  }
+
+  .tip-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+  }
+
+  @media (max-width: 768px) {
+    .tip-img {
+        max-width: 100%;
+    }
+  }
+  
+  .tip-img {
+    width: 100%;
+    max-height: 900px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Add more custom styles if needed for lists or sections */
+  
+  .tip-detail {
+    padding: 3rem 1rem;
+    background-color: #ffffff;
+  }
+  
+  .tip-detail h2 {
+    color: #2a9d8f;
+    margin-bottom: 1rem;
+  }
+  
+  .tip-detail p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+
+  .tips {
+    padding: 3rem 1rem;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .tips h2 {
+    color: #2a9d8f;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tip {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  
+  .tip-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .tip h4 {
+    color: #264653;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tip p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #scrollToTopBtn:hover {
+    background: #0077aa;
+  }
+
+  
+  
